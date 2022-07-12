@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import "./GridBox.css";
 
 export default function GridBox({ onClick, children }) {

@@ -1,5 +1,6 @@
 import React from "react";
 import "./WinLine.css";
+// Styles corresponding to positions of 8 winning states
 const lineStyles = [
 	{ opacity: 0 },
 	{
@@ -19,6 +20,7 @@ const lineStyles = [
 	{ opacity: 1, transform: "rotate(-45deg)", height: "150%" },
 	{ opacity: 1, transform: "rotate(45deg)", height: "150%" },
 ];
+// Function to return one of 8 possible winning states
 const winLineState = (state) =>
 	state[0] === state[1] && state[0] === state[2] && state[0] !== "0"
 		? 1
@@ -40,7 +42,7 @@ const winLineState = (state) =>
 export default function WinLine({ state, color }) {
 	const [style, setStyle] = React.useState({});
 	React.useEffect(() => {
-		setStyle(lineStyles[winLineState(state)]);
+		setStyle(lineStyles[winLineState(state)]); // Place line to show winning state
 	}, [state]);
 	return (
 		<div

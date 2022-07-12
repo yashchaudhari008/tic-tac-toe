@@ -21,6 +21,7 @@ export default function Grid({
 				{state.split("").map((s, index) => (
 					<GridBox
 						key={index}
+						// Modify game-state and toggle turn
 						onClick={() => {
 							if (state[index] === "0") {
 								setGameState(stringInsert(state, turn, index));
@@ -28,6 +29,7 @@ export default function Grid({
 							}
 						}}
 					>
+						{/* Place X if box contains X */}
 						{s === "x" && (
 							<FiPlus
 								style={{ transform: "rotate(45deg) scale(1.5)" }}
@@ -35,6 +37,7 @@ export default function Grid({
 								color={secondaryAccent}
 							/>
 						)}
+						{/* Place O if box contains O */}
 						{s === "o" && <MdOutlineCircle color={secondaryAccent} />}
 					</GridBox>
 				))}
