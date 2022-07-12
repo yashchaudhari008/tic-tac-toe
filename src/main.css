@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 :root {
+
+    /* DEFAULTS */
+    --borderRadius: 1rem;
+    --margin: 0.5rem;
+
     /* COLORS SCHEME */
     --backgroundColor: #F5F2E5;
     --textColor: #49454F;
@@ -7,6 +12,10 @@
     --primaryTextColor: var(--backgroundColor);
     --secondaryColor: #F0CE7F;
     --secondaryTextColor: var(--primaryColor);
+
+    /* BOX SHADOWS */
+    --defaultShadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+    --defaultFilter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.3));
 }
 html, body {
     margin: 0;

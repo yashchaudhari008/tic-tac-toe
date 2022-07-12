@@ -1,0 +1,26 @@
+.primaryButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    border: none;
+    padding: 0 3rem;
+    margin: var(--margin);
+    
+    background-color: var(--primaryColor);
+    color: var(--primaryTextColor);
+
+    border-radius: var(--borderRadius);
+    font: 1.2rem Roboto;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    
+    box-shadow: var(--defaultShadow);
+    filter: var(--defaultFilter);
+
+    cursor:pointer;
+}
+.primaryButton:hover{
+    filter:invert(2);
+    box-shadow:0 0 0 .1rem var(--primaryTextColor);
+}
