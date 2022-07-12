@@ -1,0 +1,6 @@
+.box {
+	background-color: var(--backgroundColor);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
