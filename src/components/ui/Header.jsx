@@ -7,10 +7,10 @@ export default function Header() {
 	return (
 		<>
 			<div id="header">
-				<div class="button">
+				<div className="button">
 					<AiFillSetting />
 				</div>
-				<div class="button">
+				<div className="button">
 					<MdClose onClick={() => window.history.back()} />
 				</div>
 			</div>
