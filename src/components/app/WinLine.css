@@ -1,0 +1,8 @@
+.win-line {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 110%;
+	width: 2.5%;
+	transform-origin: 50% 50%;
+}
