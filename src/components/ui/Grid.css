@@ -1,9 +1,9 @@
 .game-board {
-  margin: auto auto;
-  display: grid;
-  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-  position: relative;
+	margin: auto auto;
+	display: grid;
+	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+	position: relative;
 }
 .win-line {
-  position: absolute;
+	position: absolute;
 }

@@ -1,0 +1,21 @@
+{
+	"useTabs": true,
+	"useEditorConfig": true,
+	"semi": true,
+	"bracketSpacing": true,
+	"arrowParens": "always",
+	"embeddedLanguageFormatting": "auto",
+	"enable": true,
+	"endOfLine": "lf",
+	"htmlWhitespaceSensitivity": "strict",
+	"ignorePath": ".prettierignore",
+	"jsxBracketSameLine": false,
+	"jsxSingleQuote": false,
+	"insertPragma": false,
+	"enableDebugLogs": false,
+	"withNodeModules": false,
+	"vueIndentScriptAndStyle": false,
+	"trailingComma": "es5",
+	"tabWidth": 2,
+	"singleQuote": false
+}

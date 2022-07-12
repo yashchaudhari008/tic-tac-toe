@@ -1,14 +1,14 @@
 #footer {
-  height: 32px;
-  bottom: 0;
-  font-weight: 500;
-  font-size: smaller;
-  text-align: center;
+	height: 32px;
+	bottom: 0;
+	font-weight: 500;
+	font-size: smaller;
+	text-align: center;
 }
 #footer a {
-  text-decoration: none;
-  color: var(--textColor);
+	text-decoration: none;
+	color: var(--textColor);
 }
 #footer a:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
