@@ -1,8 +1,8 @@
 export default function Nought(stroke, multiplier) {
   return (
     <svg
-      width="104"
-      height="105"
+      width="15.36vmin"
+      height="15.36vmin"
       viewBox="0 0 104 105"
       fill="none"
       style={{ transform: `scale(${multiplier})` }}

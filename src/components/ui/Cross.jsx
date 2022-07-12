@@ -1,8 +1,8 @@
 export default function Cross(stroke, multiplier) {
   return (
     <svg
-      width="93"
-      height="94"
+      width="15.36vmin"
+      height="15.36vmin"
       viewBox="0 0 93 94"
       fill="none"
       style={{ transform: `scale(${multiplier})` }}
