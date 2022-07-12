@@ -1,0 +1,9 @@
+#header {
+  display: flex;
+  font-size: 2.2rem;
+  padding: 1rem;
+  justify-content: space-between;
+}
+.button {
+  cursor: pointer;
+}

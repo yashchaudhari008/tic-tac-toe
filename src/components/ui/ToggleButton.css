@@ -1,0 +1,22 @@
+.toggleButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: calc(var(--borderRadius) * 2);
+  background-color: var(--primaryColor);
+  height: 30px;
+  width: 60px;
+  margin: var(--margin);
+}
+.toggleButton .toggleButtonHandler {
+  border-radius: 50%;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+}
+.toggleOn {
+  justify-content: flex-end;
+}
+.toggleOn .toggleButtonHandler {
+  background-color: var(--secondaryColor);
+}

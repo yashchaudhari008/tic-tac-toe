@@ -1,8 +1,8 @@
 #footer {
-  height: 24px;
+  height: 32px;
   bottom: 0;
   font-weight: 500;
-  font-size: small;
+  font-size: smaller;
   text-align: center;
 }
 #footer a {

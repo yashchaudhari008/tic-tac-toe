@@ -18,5 +18,8 @@
   "prettier.trailingComma": "es5",
   "prettier.tabWidth": 2,
   "prettier.singleQuote": false,
-  "editor.formatOnSave": true
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

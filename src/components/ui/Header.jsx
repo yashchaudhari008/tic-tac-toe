@@ -1,5 +1,19 @@
 import React from "react";
+import "./Header.css";
+import { AiFillSetting } from "react-icons/ai";
+import { MdClose } from "react-icons/md";
 
 export default function Header() {
-  return <h2>Header Component that will hold side navigation/setting bar.</h2>;
+  return (
+    <>
+      <div id="header">
+        <div className="button">
+          <AiFillSetting />
+        </div>
+        <div className="button">
+          <MdClose onClick={() => window.history.back()} />
+        </div>
+      </div>
+    </>
+  );
 }
