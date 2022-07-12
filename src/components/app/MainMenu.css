@@ -1,0 +1,15 @@
+.mainMenu {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.mainMenu .heading {
+	font-size: 4rem;
+}
+.mainMenu .buttonHolder {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
