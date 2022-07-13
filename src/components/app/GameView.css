@@ -1,0 +1,6 @@
+#gameView {
+	width: min(95vw, 470px);
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
