@@ -1,10 +1,10 @@
 .grid-container {
-	margin: 25px;
+	margin: 6%;
 	flex: 1 1 auto;
 }
 .game-board {
 	position: relative;
-	margin: 10px auto;
+	margin: auto;
 	aspect-ratio: 1;
 	display: grid;
 	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
@@ -12,9 +12,6 @@
 }
 
 @media (orientation: landscape) {
-	.grid-container {
-		margin: 50px;
-	}
 	.game-board {
 		height: 100%;
 	}

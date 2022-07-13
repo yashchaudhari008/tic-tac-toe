@@ -3,7 +3,11 @@ import Grid from "./Grid";
 import MainMenu from "./MainMenu";
 
 export default function GameWindow({ gameState, setGameState }) {
-	const [gridState, setGridState] = React.useState("000000000");
+	const [gridState, setGridState] = React.useState([
+		[null, null, null],
+		[null, null, null],
+		[null, null, null],
+	]);
 	const [turn, setTurn] = React.useState("x");
 	return (
 		<div

@@ -1,8 +1,34 @@
 .win-line {
 	position: absolute;
-	left: 50%;
-	top: 50%;
+	inset: 50% 50%;
 	height: 110%;
 	width: 2.5%;
-	transform-origin: 50% 50%;
+	transform: translate(-50%, -50%);
+}
+.line-1,
+.line-2,
+.line-3 {
+	transform: translate(-50%, -50%) rotate(90deg);
+}
+.line-7,
+.line-8 {
+	height: 150%;
+}
+.line-1 {
+	top: calc(50% / 3);
+}
+.line-3 {
+	top: calc(250% / 3);
+}
+.line-4 {
+	left: calc(50% / 3);
+}
+.line-6 {
+	left: calc(250% / 3);
+}
+.line-7 {
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+.line-8 {
+	transform: translate(-50%, -50%) rotate(45deg);
 }
