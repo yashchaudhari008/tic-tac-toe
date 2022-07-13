@@ -1,0 +1,37 @@
+.win-line {
+	position: absolute;
+	inset: 50% 50%;
+	height: 105%;
+	width: 1rem;
+	border-radius: var(--borderRadius);
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	background-color: var(--secondaryColor);
+}
+.line-1,
+.line-2,
+.line-3 {
+	transform: translate(-50%, -50%) rotate(90deg);
+}
+.line-7,
+.line-8 {
+	height: 130%;
+}
+.line-1 {
+	top: calc(50% / 3);
+}
+.line-3 {
+	top: calc(250% / 3);
+}
+.line-4 {
+	left: calc(50% / 3);
+}
+.line-6 {
+	left: calc(250% / 3);
+}
+.line-7 {
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+.line-8 {
+	transform: translate(-50%, -50%) rotate(45deg);
+}

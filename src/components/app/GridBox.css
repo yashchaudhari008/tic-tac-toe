@@ -1,0 +1,11 @@
+.box {
+	background-color: var(--backgroundColor);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+.box > svg {
+	width: 70%;
+	height: 70%;
+}
