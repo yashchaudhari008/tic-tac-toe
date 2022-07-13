@@ -12,7 +12,7 @@ export default function MainWindow() {
 	// 2 -> Game View (Computer)
 	return (
 		<div id="MainWindow">
-			<Header />
+			<Header gameState={gameState} setGameState={setGameState} />
 			<GameWindow gameState={gameState} setGameState={setGameState} />
 			<Footer />
 		</div>

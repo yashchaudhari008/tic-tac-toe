@@ -27,19 +27,9 @@ export default function Grid({ state, setGameState, turn, setTurn }) {
 							}}
 						>
 							{/* Place X if box contains X */}
-							{col === "x" && (
-								<FiPlus
-									style={{
-										transform: "rotate(45deg) scale(1.5)",
-										color: "var(--textColor)",
-									}}
-									strokeWidth={1.5}
-								/>
-							)}
+							{col === "x" && <X />}
 							{/* Place O if box contains O */}
-							{col === "o" && (
-								<MdOutlineCircle style={{ color: "var(--textColor)" }} />
-							)}
+							{col === "o" && <O />}
 						</GridBox>
 					))
 				)}
@@ -48,3 +38,19 @@ export default function Grid({ state, setGameState, turn, setTurn }) {
 		</div>
 	);
 }
+
+const X = () => {
+	return (
+		<FiPlus
+			style={{
+				transform: "rotate(45deg) scale(1.5)",
+				color: "var(--textColor)",
+			}}
+			strokeWidth={1.5}
+		/>
+	);
+};
+
+const O = () => {
+	return <MdOutlineCircle style={{ color: "var(--textColor)" }} />;
+};
