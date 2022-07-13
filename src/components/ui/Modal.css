@@ -19,17 +19,10 @@
 	transform: translate(-50%, -50%);
 	padding: 20px;
 	border: 1px solid #888;
-	width: 80%;
+	width: min(80%, 700px);
 	border-radius: 28px;
 }
-@media (min-width: 768px) {
-	.modal-content {
-		width: 50%;
-	}
-}
-
-@media (min-width: 1200px) {
-	.modal-content {
-		width: 33%;
-	}
+.modal-content .heading {
+	text-align: center;
+	font-weight: 500;
 }

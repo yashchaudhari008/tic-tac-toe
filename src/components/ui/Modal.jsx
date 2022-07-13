@@ -1,18 +1,20 @@
 import React from "react";
 import "./Modal.css";
-export default function Modal({ open, toggle, children }) {
+
+export default function Modal({ isModalOpen, closeModal, heading, children }) {
 	const modalContentRef = React.useRef();
 	React.useEffect(() => {
 		const handleClickOutside = (e) =>
 			modalContentRef.current &&
 			!modalContentRef.current.contains(e.target) &&
-			toggle(false);
+			closeModal();
 		document.addEventListener("mousedown", handleClickOutside);
 		return () => document.removeEventListener("mousedown", handleClickOutside);
-	}, [modalContentRef, toggle]);
-	return open ? (
-		<div id="myModal" class="modal">
-			<div ref={modalContentRef} class="modal-content">
+	}, [closeModal]);
+	return isModalOpen ? (
+		<div className="modal">
+			<div ref={modalContentRef} className="modal-content">
+				<h1 className="heading">{heading}</h1>
 				{children}
 			</div>
 		</div>

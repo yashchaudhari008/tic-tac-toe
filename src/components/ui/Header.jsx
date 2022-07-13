@@ -6,23 +6,31 @@ import Modal from "./Modal";
 import Button from "./Button";
 
 export default function Header() {
-	const [settings, toggleSettings] = React.useState(false);
+	const [isSettingsMenuOpen, setSettingsMenuOpen] = React.useState(false);
+	const closeSettingsMenu = () => setSettingsMenuOpen(false);
+	const saveSetttings = () => {
+		//Save New Settings
+		closeSettingsMenu();
+	};
 	return (
 		<>
 			<div id="header">
 				<div className="button">
-					<AiFillSetting onClick={() => toggleSettings(true)} />
+					<AiFillSetting onClick={() => setSettingsMenuOpen(true)} />
 				</div>
 				<div className="button">
 					<MdClose onClick={() => window.history.back()} />
 				</div>
 			</div>
-			<Modal open={settings} toggle={toggleSettings}>
-				<h1 style={{ textAlign: "center", fontSize: "3rem" }}>Settings</h1>
-				<Button
-					buttonText="cancel"
-					onClickHandler={() => toggleSettings(false)}
-				/>
+			<Modal
+				isModalOpen={isSettingsMenuOpen}
+				closeModal={closeSettingsMenu}
+				heading={"Settings"}
+			>
+				<div>
+					<Button buttonText={"Cancel"} onClickHandler={closeSettingsMenu} />
+					<Button buttonText={"Save"} onClickHandler={saveSetttings} />
+				</div>
 			</Modal>
 		</>
 	);
