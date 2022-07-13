@@ -1,12 +1,19 @@
 import React from "react";
 import MainMenu from "./MainMenu";
+import GameView from "./GameView";
 
 export default function GameWindow({ gameState, setGameState }) {
 	return (
-		<div style={{ flex: 1 }}>
+		<div
+			style={{
+				flex: 1,
+				display: "grid",
+				placeItems: "center",
+			}}
+		>
 			{gameState === 0 && <MainMenu setGameState={setGameState} />}
-			{gameState === 1 && <div>Game View</div>}
-			{gameState === 2 && <div>Game View Computer</div>}
+			{gameState === 1 && <GameView />}
+			{gameState === 2 && <GameView computerMode={true} />}
 		</div>
 	);
 }

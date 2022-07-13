@@ -12,3 +12,14 @@
 #footer a:hover {
 	text-decoration: underline;
 }
+
+.quickSettings {
+	display: inline-flex;
+	font-size: 2.2rem;
+	padding: 1rem;
+	padding-bottom: 0;
+	gap: 1rem;
+}
+.quickSettings * {
+	cursor: pointer;
+}
