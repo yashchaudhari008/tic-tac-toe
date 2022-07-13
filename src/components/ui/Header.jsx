@@ -5,7 +5,7 @@ import { MdClose } from "react-icons/md";
 import Modal from "./Modal";
 import Button from "./Button";
 
-export default function Header() {
+export default function Header({ gameState, setGameState }) {
 	const [isSettingsMenuOpen, setSettingsMenuOpen] = React.useState(false);
 	const closeSettingsMenu = () => setSettingsMenuOpen(false);
 	const saveSetttings = () => {
@@ -19,7 +19,7 @@ export default function Header() {
 					<AiFillSetting onClick={() => setSettingsMenuOpen(true)} />
 				</div>
 				<div className="button">
-					<MdClose onClick={() => window.history.back()} />
+					{gameState === 0 && <MdClose onClick={() => window.history.back()} />}
 				</div>
 			</div>
 			<Modal

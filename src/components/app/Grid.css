@@ -1,0 +1,30 @@
+.grid-container {
+	margin: 7%;
+	flex: 1 1 auto;
+}
+.grid-lines {
+	position: absolute;
+	inset: 1px;
+	width: calc(100% - 2px);
+	height: calc(100% - 2px);
+	background-color: var(--primaryColor);
+}
+.game-board {
+	position: relative;
+	margin: auto;
+	aspect-ratio: 1;
+	display: grid;
+	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+	gap: 1.2%;
+}
+@media (orientation: landscape) {
+	.game-board {
+		height: 100%;
+	}
+}
+
+@media (orientation: portrait) {
+	.game-board {
+		width: 100%;
+	}
+}
