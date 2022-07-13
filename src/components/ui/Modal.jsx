@@ -1,7 +1,5 @@
 import React from "react";
 import "./Modal.css";
-function useOutsideAlerter(ref) {}
-
 export default function Modal({ open, toggle, children }) {
 	const modalContentRef = React.useRef();
 	React.useEffect(() => {
@@ -11,7 +9,7 @@ export default function Modal({ open, toggle, children }) {
 			toggle(false);
 		document.addEventListener("mousedown", handleClickOutside);
 		return () => document.removeEventListener("mousedown", handleClickOutside);
-	}, [modalContentRef]);
+	}, [modalContentRef, toggle]);
 	return open ? (
 		<div id="myModal" class="modal">
 			<div ref={modalContentRef} class="modal-content">
