@@ -1,8 +1,9 @@
 .win-line {
 	position: absolute;
 	inset: 50% 50%;
-	height: 110%;
-	width: 2.5%;
+	height: 105%;
+	width: 1rem;
+	border-radius: var(--borderRadius);
 	transform: translate(-50%, -50%);
 	z-index: 2;
 	background-color: var(--secondaryColor);
@@ -14,7 +15,7 @@
 }
 .line-7,
 .line-8 {
-	height: 150%;
+	height: 130%;
 }
 .line-1 {
 	top: calc(50% / 3);

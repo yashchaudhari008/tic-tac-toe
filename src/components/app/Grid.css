@@ -24,6 +24,9 @@
 }
 
 @media (orientation: portrait) {
+	.grid-container {
+		margin: 2rem;
+	}
 	.game-board {
 		width: 100%;
 	}
