@@ -20,9 +20,6 @@ export default function GameWindow({ gameState, setGameState }) {
 			{gameState === 0 && <MainMenu setGameState={setGameState} />}
 			{gameState === 1 && (
 				<Grid
-					primaryAccent="#000000"
-					secondaryAccent="#ADAAA2"
-					ternaryAccent="#F3D48C"
 					state={gridState}
 					setGameState={setGridState}
 					turn={turn}
@@ -31,9 +28,6 @@ export default function GameWindow({ gameState, setGameState }) {
 			)}
 			{gameState === 2 && (
 				<Grid
-					primaryAccent="#000000"
-					secondaryAccent="#ADAAA2"
-					ternaryAccent="#F3D48C"
 					state={gridState}
 					setGameState={setGridState}
 					turn={turn}

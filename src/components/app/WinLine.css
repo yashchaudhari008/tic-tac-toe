@@ -4,6 +4,8 @@
 	height: 110%;
 	width: 2.5%;
 	transform: translate(-50%, -50%);
+	z-index: 2;
+	background-color: var(--secondaryColor);
 }
 .line-1,
 .line-2,

@@ -35,11 +35,8 @@ const winLineState = (state) =>
 		  state[0][2] !== null
 		? 8
 		: false;
-export default function WinLine({ state, color }) {
+export default function WinLine({ state }) {
 	return winLineState(state) ? (
-		<div
-			className={`win-line line-${winLineState(state)}`}
-			style={{ backgroundColor: color }}
-		/>
+		<div className={`win-line line-${winLineState(state)}`} />
 	) : null;
 }
