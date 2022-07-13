@@ -28,8 +28,16 @@ export default function Header() {
 				heading={"Settings"}
 			>
 				<div>
-					<Button buttonText={"Cancel"} onClickHandler={closeSettingsMenu} />
-					<Button buttonText={"Save"} onClickHandler={saveSetttings} />
+					<Button
+						buttonText={"Cancel"}
+						onClickHandler={closeSettingsMenu}
+						smallBtn={true}
+					/>
+					<Button
+						buttonText={"Save"}
+						onClickHandler={saveSetttings}
+						smallBtn={true}
+					/>
 				</div>
 			</Modal>
 		</>
