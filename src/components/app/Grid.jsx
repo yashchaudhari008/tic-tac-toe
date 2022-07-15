@@ -4,7 +4,7 @@ import GridBox from "./GridBox";
 import WinLine from "./WinLine";
 import { FiPlus } from "react-icons/fi";
 import { MdOutlineCircle } from "react-icons/md";
-import { getOpponent, isGameComplete, nextAIMove, playMove } from "./gameLogic";
+import { getOpponent, isGameComplete, playAIMove, playMove } from "./gameLogic";
 
 export default function Grid({
 	gridState,
@@ -27,17 +27,11 @@ export default function Grid({
 									let [played, newState] = playMove(gridState, i, j, turn);
 									if (played) {
 										if (computerMode && !isGameComplete(newState)) {
-											let computerMove = nextAIMove(
+											let computerState = playAIMove(
 												newState,
 												getOpponent(turn)
 											);
-											let [computerPlayed, computerState] = playMove(
-												newState,
-												computerMove.i,
-												computerMove.j,
-												getOpponent(turn)
-											);
-											if (computerPlayed) setGridState(computerState);
+											setGridState(computerState);
 										} else {
 											setGridState(newState);
 											switchTurn();

@@ -116,39 +116,7 @@ export const checkWinner = (board) => {
 	return winner;
 };
 
-export const nextAIMove = (board, turn) => {
-	const minimax = (board, alpha, turn) => {
-		const scores = {
-			x: alpha === "x" ? 1 : -1,
-			o: alpha === "o" ? 1 : -1,
-			t: 0,
-		};
-
-		// Check if game is over
-		const result = checkWinner(board);
-		// If game is over return result. Terminal case for recursion
-		if (result !== null) return scores[result];
-
-		let score = turn === alpha ? -Infinity : Infinity;
-		// Iterate for all rows
-		for (let i = 0; i < 3; i++)
-			// Iterate for all columns
-			for (let j = 0; j < 3; j++)
-				// Is spot available?
-				if (board[i][j] === null)
-					// Calculate new score as min/max of current tree
-					score = (turn === alpha ? Math.max : Math.min)(
-						score,
-						// Call minimax on subtree after making move
-						minimax(
-							playMove(board, i, j, turn)[1],
-							alpha,
-							turn === "x" ? "o" : "x"
-						)
-					);
-		return score;
-	};
-
+export const playAIMove = (board, turn) => {
 	let bestScore = -Infinity;
 	let bestMove = { i: null, j: null };
 	// Iterate for all rows
@@ -158,10 +126,10 @@ export const nextAIMove = (board, turn) => {
 			// Is spot available?
 			if (board[i][j] === null) {
 				// Play that spot and get score
-				let score = minimax(
+				let score = minMaxAlgo(
 					playMove(board, i, j, turn)[1],
 					turn,
-					turn === "x" ? "o" : "x"
+					getOpponent(turn)
 				);
 				// Check if move made gives better score than previous score
 				if (score > bestScore) {
@@ -169,5 +137,39 @@ export const nextAIMove = (board, turn) => {
 					bestMove = { i, j };
 				}
 			}
-	return bestMove;
+	return playMove(board, bestMove.i, bestMove.j, turn)[1];
+};
+
+const minMaxAlgo = (board, playingFor, turn) => {
+	const outcomes = {
+		x: playingFor === "x" ? 1 : -1,
+		o: playingFor === "o" ? 1 : -1,
+		t: 0,
+	};
+
+	// Check if game is over
+	const result = checkWinner(board);
+
+	// If game is over return result.
+	// Terminal case for recursion
+	if (result !== null) return outcomes[result];
+
+	let score = turn === playingFor ? -Infinity : Infinity;
+	// Iterate for all rows
+	for (let i = 0; i < 3; i++)
+		// Iterate for all columns
+		for (let j = 0; j < 3; j++)
+			// Is spot available?
+			if (board[i][j] === null)
+				// Calculate new score as min/max of current tree
+				score = (turn === playingFor ? Math.max : Math.min)(
+					score,
+					// Call minMaxAlgo on subtree after making move
+					minMaxAlgo(
+						playMove(board, i, j, turn)[1],
+						playingFor,
+						getOpponent(turn)
+					)
+				);
+	return score;
 };
