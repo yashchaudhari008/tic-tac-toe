@@ -15,10 +15,10 @@
 
 .quickSettings {
 	position: fixed;
+	display: inline-flex;
 	inset: auto auto 0 0;
 	font-size: 2.2rem;
 	padding: 1rem;
-	padding-bottom: 0;
 }
 .quickSettings * {
 	cursor: pointer;
