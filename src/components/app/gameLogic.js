@@ -36,13 +36,7 @@ export const isWinningState = (state) =>
 
 /* Check if game is ended or not*/
 export const isGameComplete = (state) => {
-	if (isWinningState(state) > 0) return true; // Someone already won the game
-	for (let i = 0; i < 3; i++) {
-		for (let j = 0; j < 3; j++) {
-			if (state[i][j] === null) return false; // There is a empty box in grid
-		}
-	}
-	return true;
+	return checkWinner(state) !== null;
 };
 
 /* Play move if possible 
@@ -66,8 +60,116 @@ export const playMove = (state, i, j, player) => {
 export const getOpponent = (player) => (player === "x" ? "o" : "x");
 
 /*	Return's game result to show on screen*/
-export const getResults = (state, player) => {
-	if (isWinningState(state) > 0)
-		return `'${getOpponent(player).toUpperCase()}' Won`;
-	return "It a Tie";
+export const getResults = (state) => {
+	const results = {
+		x: "X Won",
+		o: "O Won",
+		t: "It's a Tie",
+	};
+	return results[checkWinner(state)];
+};
+export const checkWinner = (board) => {
+	// null : Game is not over
+	// x : X won
+	// o : O won
+	// t : Tie
+
+	// If no moves left and no winner result is tie
+	let winner = "t";
+
+	for (let i = 0; i < 3; i++) {
+		// Check Horizontal lines
+		if (
+			board[i][0] === board[i][1] &&
+			board[i][0] === board[i][2] &&
+			board[i][0] !== null
+		)
+			winner = board[i][0];
+		// Check Vertical lines
+		if (
+			board[0][i] === board[1][i] &&
+			board[0][i] === board[2][i] &&
+			board[0][i] !== null
+		)
+			winner = board[0][i];
+	}
+	// Check Diagonals
+	if (
+		board[0][0] === board[1][1] &&
+		board[0][0] === board[2][2] &&
+		board[0][0] !== null
+	)
+		winner = board[0][0];
+	if (
+		board[0][2] === board[1][1] &&
+		board[0][2] === board[2][0] &&
+		board[0][2] !== null
+	)
+		winner = board[0][2];
+
+	// Check empty squares
+	for (let i = 0; i < 3; i++)
+		for (let j = 0; j < 3; j++)
+			if (board[i][j] === null && winner === "t") return null;
+
+	// Return result if game is concluded
+	return winner;
+};
+
+export const playAIMove = (board, turn) => {
+	let bestScore = -Infinity;
+	let bestMove = { i: null, j: null };
+	// Iterate for all rows
+	for (let i = 0; i < 3; i++)
+		// Iterate for all columns
+		for (let j = 0; j < 3; j++)
+			// Is spot available?
+			if (board[i][j] === null) {
+				// Play that spot and get score
+				let score = minMaxAlgo(
+					playMove(board, i, j, turn)[1],
+					turn,
+					getOpponent(turn)
+				);
+				// Check if move made gives better score than previous score
+				if (score > bestScore) {
+					bestScore = score;
+					bestMove = { i, j };
+				}
+			}
+	return playMove(board, bestMove.i, bestMove.j, turn)[1];
+};
+
+const minMaxAlgo = (board, playingFor, turn) => {
+	const outcomes = {
+		x: playingFor === "x" ? 1 : -1,
+		o: playingFor === "o" ? 1 : -1,
+		t: 0,
+	};
+
+	// Check if game is over
+	const result = checkWinner(board);
+
+	// If game is over return result.
+	// Terminal case for recursion
+	if (result !== null) return outcomes[result];
+
+	let score = turn === playingFor ? -Infinity : Infinity;
+	// Iterate for all rows
+	for (let i = 0; i < 3; i++)
+		// Iterate for all columns
+		for (let j = 0; j < 3; j++)
+			// Is spot available?
+			if (board[i][j] === null)
+				// Calculate new score as min/max of current tree
+				score = (turn === playingFor ? Math.max : Math.min)(
+					score,
+					// Call minMaxAlgo on subtree after making move
+					minMaxAlgo(
+						playMove(board, i, j, turn)[1],
+						playingFor,
+						getOpponent(turn)
+					)
+				);
+	return score;
 };

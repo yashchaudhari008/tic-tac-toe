@@ -21,7 +21,7 @@ export default function GameView({ computerMode }) {
 			<h1>
 				{!isGameComplete(gridState)
 					? `${turn.toUpperCase()}'s Turn`
-					: `${getResults(gridState, turn)}, Game Over!`}
+					: `${getResults(gridState)}, Game Over!`}
 			</h1>
 			<Grid
 				gridState={gridState}

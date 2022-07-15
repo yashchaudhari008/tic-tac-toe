@@ -5,5 +5,6 @@
 	justify-content: space-between;
 }
 .button {
+	display: inline-flex;
 	cursor: pointer;
 }
