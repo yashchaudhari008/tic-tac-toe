@@ -5,10 +5,13 @@ export default function Button({
 	iconComponent,
 	onClickHandler,
 	smallBtn,
+	secondaryBtn,
 }) {
 	return (
 		<button
-			className={`primaryButton ${smallBtn && "smallButton"}`}
+			className={`primaryButton ${secondaryBtn && "secondaryButton"} ${
+				smallBtn && "smallButton"
+			}`}
 			onClick={onClickHandler}
 		>
 			{iconComponent}
