@@ -21,8 +21,14 @@
 	cursor: pointer;
 }
 .primaryButton:hover {
-	filter: invert(2);
-	box-shadow: 0 0 0 0.1rem var(--primaryTextColor);
+	background-color: var(--primaryTextColor);
+	filter: saturate(0.5);
+	color: var(--primaryColor);
+	box-shadow: var(--defaultShadow), 0 0 0 0.1rem var(--primaryColor);
+}
+.secondaryButton {
+	background-color: var(--secondaryColor);
+	color: var(--secondaryTextColor);
 }
 .smallButton {
 	font-size: 1rem;
