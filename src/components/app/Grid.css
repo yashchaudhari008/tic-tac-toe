@@ -1,5 +1,5 @@
 .grid-container {
-	margin: 7%;
+	margin: 5%;
 	flex: 1 1 auto;
 }
 .grid-lines {
@@ -11,6 +11,7 @@
 }
 .game-board {
 	position: relative;
+	width: 80%;
 	margin: auto;
 	aspect-ratio: 1;
 	display: grid;
@@ -26,8 +27,5 @@
 @media (orientation: portrait) {
 	.grid-container {
 		margin: 2rem;
-	}
-	.game-board {
-		width: 100%;
 	}
 }
