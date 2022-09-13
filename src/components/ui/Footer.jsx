@@ -9,6 +9,9 @@ export default function Footer() {
 		setFullscreen((old) => !old);
 		screenfull.toggle();
 	};
+	window.addEventListener('beforeinstallprompt', (e) => {
+		e.preventDefault()
+	})
 	return (
 		<>
 			<div className="quickSettings">
