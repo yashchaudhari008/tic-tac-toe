@@ -3,6 +3,7 @@
 	font-size: 2.2rem;
 	padding: 1rem;
 	justify-content: space-between;
+	position: fixed;
 }
 .button {
 	display: inline-flex;

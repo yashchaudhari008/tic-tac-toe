@@ -4,6 +4,8 @@
 	font-weight: 500;
 	font-size: smaller;
 	text-align: center;
+	position: fixed;
+	width: 100%;
 }
 #footer a {
 	text-decoration: none;

@@ -1,5 +1,5 @@
 #gameView {
-	width: min(95vw, 470px);
+	width: min(95vw, 85vh);
 	display: flex;
 	flex-direction: column;
 	text-align: center;
