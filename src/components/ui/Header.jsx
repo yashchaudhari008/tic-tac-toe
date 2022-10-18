@@ -18,15 +18,11 @@ export default function Header({ gameState, setGameState }) {
 				<div className="button">
 					<AiFillSetting onClick={() => setSettingsMenuOpen(true)} />
 				</div>
-				<div className="button">
-					<MdClose
-						onClick={
-							gameState === 0
-								? () => window.history.back()
-								: () => setGameState(0)
-						}
-					/>
-				</div>
+				{gameState !== 0 && (
+					<div className="button">
+						<MdClose onClick={() => setGameState(0)} />
+					</div>
+				)}
 			</div>
 			<Modal
 				isModalOpen={isSettingsMenuOpen}
