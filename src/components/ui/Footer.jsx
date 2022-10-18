@@ -3,6 +3,11 @@ import screenfull from "screenfull";
 import "./Footer.css";
 import { MdFullscreen, MdFullscreenExit } from "react-icons/md";
 
+const isInStandaloneMode = () =>
+	(window.matchMedia('(display-mode: standalone)').matches)
+	|| (window.navigator.standalone)
+	|| document.referrer.includes('android-app://');
+
 export default function Footer() {
 	const [isFullscreen, setFullscreen] = useState(screenfull.isFullscreen);
 	const handleFullscreen = () => {
@@ -11,14 +16,16 @@ export default function Footer() {
 	};
 	return (
 		<>
-			<div className="quickSettings">
-				{screenfull.isEnabled &&
-					(!isFullscreen ? (
-						<MdFullscreen onClick={handleFullscreen} />
-					) : (
-						<MdFullscreenExit onClick={handleFullscreen} />
-					))}
-			</div>
+			{!isInStandaloneMode() && (
+				<div className="quickSettings">
+					{screenfull.isEnabled &&
+						(!isFullscreen ? (
+							<MdFullscreen onClick={handleFullscreen} />
+						) : (
+							<MdFullscreenExit onClick={handleFullscreen} />
+						))}
+				</div>
+			)}
 			<div id="footer">
 				Made with ❤️ by madOverGames |{" "}
 				<a href="https://github.com/madOverGames/tic-tac-toe">Github</a>
