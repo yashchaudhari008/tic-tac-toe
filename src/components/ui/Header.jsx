@@ -18,9 +18,7 @@ export default function Header({ gameState, setGameState }) {
 				<div className="button">
 					<AiFillSetting onClick={() => setSettingsMenuOpen(true)} />
 				</div>
-				{gameState === 0 ? (
-					""
-				) : (
+				{gameState !== 0 && (
 					<div className="button">
 						<MdClose onClick={() => setGameState(0)} />
 					</div>
