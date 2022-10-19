@@ -27,8 +27,8 @@ export default function Footer() {
 				</div>
 			)}
 			<div id="footer">
-				Made with ❤️ by madOverGames |{" "}
-				<a href="https://github.com/madOverGames/tic-tac-toe">Github</a>
+				Made with ❤️ by yash_chaudhari_008 |{" "}
+				<a href="https://github.com/yashchaudhari008/tic-tac-toe">Github</a>
 			</div>
 		</>
 	);
