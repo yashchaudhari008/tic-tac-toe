@@ -27,7 +27,7 @@ export default function Footer() {
 				</div>
 			)}
 			<div id="footer">
-				Made with ❤️ by yash_chaudhari_008 |{" "}
+				Made with ❤️ by Yash Chaudhari |{" "}
 				<a href="https://github.com/yashchaudhari008/tic-tac-toe">Github</a>
 			</div>
 		</>
