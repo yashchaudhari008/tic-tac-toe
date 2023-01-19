@@ -1,5 +1,6 @@
 #header {
 	display: flex;
+	flex-direction: row-reverse;
 	font-size: 2.2rem;
 	padding: 1rem;
 	justify-content: space-between;
